@@ -8,11 +8,7 @@
     "build": "vite build",
     "lint": "npm-run-all lint-ts lint-style",
     "lint-ts": "eslint --config ./eslint.config.js ./src",
-    "lint-style": "stylelint \"**/*.scss\"",
-    "start:dev": "vite --mode dev --host",
-    "start:prod": "vite --mode prod --host",
-    "build:dev": "vite build --mode dev",
-    "build:prod": "vite build --mode prod"
+    "lint-style": "stylelint \"**/*.scss\""
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.30.1",
