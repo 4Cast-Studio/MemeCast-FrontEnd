@@ -1,0 +1,17 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: white;
+  background: #EBFFFD;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav {
+  position: absolute;
+  inset: auto 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}

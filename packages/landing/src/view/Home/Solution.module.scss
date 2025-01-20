@@ -1,0 +1,59 @@
+.container {
+  background: url("../../asset/solution/Background.webp") center / 100% 100% no-repeat;
+}
+
+.title {
+  margin-bottom: 0.8em;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2em;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 2.5em;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.2em;
+  margin-bottom: 0.8em;
+}
+
+.arrows {
+  width: 2.5em;
+  aspect-ratio: 55 / 30;
+}
+
+.name {
+  font-size: 1.8em;
+}
+
+.gif {
+  max-width: 600px;
+  width: 100%;
+  aspect-ratio: 656 / 480;
+  background: url("../../asset/solution/Robot.gif") bottom 35% center / 4em auto no-repeat;
+}
+
+@media screen and (width <= 900px) {
+  .content {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .left {
+    order: 2;
+  }
+
+  .right {
+    order: 1;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "MEMECAST",
+  "short_name": "MEMECAST",
+  "description": "MEMECAST is building the Re/Creation layer to transform memes from fleeting pumps into lasting cults. By integrating AI agents with gaming, trading, and community power, we're flipping the script on the lifecycle of meme coins - breaking past short-term hype to fuel long-term growth and momentum.",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}

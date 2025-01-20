@@ -1,0 +1,9 @@
+{
+  "name": "memecast-frontend",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/eslint",
+    "packages/stylelint",
+    "packages/landing"
+  ]
+}

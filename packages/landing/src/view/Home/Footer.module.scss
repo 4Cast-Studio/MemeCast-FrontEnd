@@ -1,0 +1,118 @@
+.footer {
+  margin-top: 4em;
+  border-radius: 7em 7em 0 0;
+  position: relative;
+  background: #70BCD6;
+  padding: 7em 0 1em;
+}
+
+.pane {
+  position: absolute;
+  inset: 0 auto auto 0;
+  transform: translate(0, -50%);
+}
+
+.box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgb(112 188 214) url("../../asset/footer/Background.webp") center / 100% 100% no-repeat;
+  padding: 3em 5em;
+  border-radius: 2.5em;
+  border: 6px solid white;
+}
+
+.text {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.start {
+  font-size: 1.2em;
+  color: #00658B;
+  background: url("../../asset/common/Border.webp") center / 100% 100% no-repeat;
+  padding: 0.4em 1.8em;
+}
+
+.logo {
+  width: 8em;
+  aspect-ratio: 90 / 34;
+  margin-bottom: 1em;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.shield {
+  width: 1.5em;
+  height: 1.5em;
+  display: block;
+}
+
+.audit {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #08FFE1;
+}
+
+.links {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.item {
+  padding: 0.5em;
+  background: #9FD9ED;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+.copyright {
+  color: #216B85;
+}
+
+@media screen and (width <= 1200px) {
+  .footer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .pane {
+    position: relative;
+    transform: translate(0, 0);
+  }
+}
+
+@media screen and (width <= 900px) {
+  .box {
+    padding: 1.5em 1em;
+  }
+
+  .logo {
+    margin-top: 1em;
+  }
+
+  .text {
+    font-size: 1.5em;
+  }
+}

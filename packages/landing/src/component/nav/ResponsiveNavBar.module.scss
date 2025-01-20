@@ -1,0 +1,111 @@
+.full {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  background: rgba(10 40 49 / 0.4);
+  padding: 0.8em 2em;
+}
+
+.logo {
+  height: 2em;
+  aspect-ratio: 90 / 34;
+  display: block;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.jump {
+  font-weight: 500;
+}
+
+.launch {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0.3em 1.5em 0.4em;
+  background: url("../../asset/common/Border.webp") center / 100% 100% no-repeat;
+  color: #00658B;
+}
+
+.social {
+  border-radius: 50%;
+  background: #C3F0FF;
+  padding: 0.4em;
+}
+
+.contact {
+  width: 1.2em;
+  height: 1.2em;
+  display: block;
+}
+
+.collapsed {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  background: rgba(10 40 49 / 0.4);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    font-size: 2em;
+  }
+}
+
+.container {
+  display: flex;
+}
+
+.drawer {
+  box-sizing: border-box;
+  flex: 1 1 0;
+  min-width: 18em;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 0.8em 0 0 0.8em;
+  background: rgba(10 40 49);
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon {
+    font-size: 1.8em;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.text {
+  font-size: 0.9em;
+}
+
+@media screen and (width <= 600px) {
+  .logo {
+    height: 2em;
+  }
+}

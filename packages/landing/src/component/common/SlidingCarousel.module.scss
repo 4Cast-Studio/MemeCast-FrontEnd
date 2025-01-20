@@ -1,0 +1,42 @@
+.pane {
+  overflow: hidden;
+}
+
+.content_left {
+  display: flex;
+  justify-content: left;
+  gap: 2em;
+
+  .animate {
+    animation: slide-left 60s linear infinite;
+  }
+}
+
+.content_right {
+  display: flex;
+  justify-content: right;
+
+  .animate {
+    animation: slide-right 60s linear infinite;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}

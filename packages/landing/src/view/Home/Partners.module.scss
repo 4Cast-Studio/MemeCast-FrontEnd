@@ -1,0 +1,26 @@
+.pane {
+  margin-top: 0.4em;
+  width: 100vw;
+  border-top: 1px solid #00658B;
+  border-bottom: 1px solid #00658B;
+  padding: 0.8em 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 1em;
+  filter: opacity(0.5);
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.image {
+  width: 8em;
+  aspect-ratio: 192 / 52;
+}

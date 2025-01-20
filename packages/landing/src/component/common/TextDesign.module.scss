@@ -1,0 +1,19 @@
+.text_saf {
+  font-family: SAF, sans-serif;
+}
+
+.text_pixel {
+  font-family: ChillPixels, sans-serif;
+}
+
+.text_shadow {
+  filter:
+    drop-shadow(1px 1px 0 white)
+    drop-shadow(-1px 1px 0 white)
+    drop-shadow(1px -1px 0 white)
+    drop-shadow(-1px -1px 0 white)
+    drop-shadow(1px 0 0 white)
+    drop-shadow(0 1px 0 white)
+    drop-shadow(-1px 0 0 white)
+    drop-shadow(0 -1px 0 white);
+}

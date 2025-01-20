@@ -1,0 +1,37 @@
+.main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.dots {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+}
+
+.small {
+  width: 0.5em;
+  height: 0.5em;
+  background: black;
+}
+
+.medium {
+  width: 0.75em;
+  height: 0.75em;
+  background: black;
+}
+
+.large {
+  width: 1.25em;
+  height: 1.25em;
+  background: black;
+}
+
+.center {
+  font-size: 3em;
+  padding: 0 0.5em;
+}

@@ -1,0 +1,8 @@
+# macOS Desktop Services Store.
+.DS_Store
+
+# Dependency.
+/node_modules
+
+# Output folder.
+/build
