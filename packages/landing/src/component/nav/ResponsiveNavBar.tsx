@@ -4,6 +4,7 @@ import ImageDiscord from '#/asset/contact/Disbord.svg';
 import ImageTwitter from '#/asset/contact/Twitter.svg';
 import Logo from '#/asset/logo/Logo.webp';
 import { useWindowSize } from '#/hook/UseWindowSize';
+import { Pathname } from '#/util/Pathname';
 import { Url } from '#/util/Url';
 import { Button } from '../basic/Button';
 import { AdaptiveLink } from '../common/AdaptiveLink';
@@ -23,6 +24,7 @@ function Full() {
         <AdaptiveLink href="/#Features" className={styles.jump}>Features</AdaptiveLink>
         <AdaptiveLink href="/#Solution" className={styles.jump}>Solution</AdaptiveLink>
         <AdaptiveLink href="/#Roadmap" className={styles.jump}>Roadmap</AdaptiveLink>
+        <AdaptiveLink href={Pathname.Tokenomics} className={styles.jump}>Tokenomics</AdaptiveLink>
         <AdaptiveLink href={Url.contact.twitter} className={styles.social}>
           <img src={ImageTwitter} alt="X" className={styles.contact} />
         </AdaptiveLink>
@@ -68,6 +70,7 @@ function Collapsed() {
             <AdaptiveLink href="/#Features" className={styles.jump}>Features</AdaptiveLink>
             <AdaptiveLink href="/#Solution" className={styles.jump}>Solution</AdaptiveLink>
             <AdaptiveLink href="/#Roadmap" className={styles.jump}>Roadmap</AdaptiveLink>
+            <AdaptiveLink href={Pathname.Tokenomics} className={styles.jump}>Tokenomics</AdaptiveLink>
             <AdaptiveLink href={Url.contact.twitter} className={styles.text}>
               Twitter
             </AdaptiveLink>

@@ -1,0 +1,66 @@
+.container {
+  background: url("./IntroBackground.webp") center / cover no-repeat;
+}
+
+.title {
+  font-size: 3em;
+  color: #00658B;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1332 / 1088;
+  display: block;
+}
+
+.rows {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  gap: 0.5em 1.2em;
+}
+
+.arrow {
+  width: 2.5em;
+  aspect-ratio: 43 / 23;
+  display: block;
+}
+
+.name {
+  font-size: 1.5em;
+  color: #00658B;
+}
+
+.text {
+  color: black;
+
+  &:not(:last-child) {
+    margin-bottom: 1.5em;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .image {
+    max-width: 500px;
+  }
+}
