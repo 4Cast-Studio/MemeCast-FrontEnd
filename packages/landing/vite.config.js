@@ -28,6 +28,11 @@ export default defineConfig({
         postcssMediaMinMax(), // Support CSS Media Queries Level 4. Allow range query for older iOS Safari.
       ],
     },
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      },
+    },
   },
   build: {
     outDir: 'build',
