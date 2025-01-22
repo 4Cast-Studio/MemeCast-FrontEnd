@@ -28,7 +28,7 @@ export function Accounts() {
 
   return (
     <Container maxWidth="900px" padding="3em 1em" className={styles.pane}>
-      <TextDesign fontFamily="Pixel" className={styles.title}>TEAM ESCROW ACCROUNTS</TextDesign>
+      <TextDesign fontFamily="Pixel" className={styles.title}>TEAM ESCROW ACCOUNTS</TextDesign>
       <div className={styles.table}>
         {
           walletsDev.map((wallet, index) => (

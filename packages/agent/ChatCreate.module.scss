@@ -1,0 +1,31 @@
+.input {
+  margin-top: 1em;
+  background: rgba(255 255 255 / 0.1);
+  border: 1px solid rgba(255 255 255 / 0.2);
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.5em 0.8em;
+  position: relative;
+}
+
+.mask {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.button {
+  background: rgba(255 255 255 / 0.2);
+  border-radius: 50%;
+  padding: 0.4em;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  gap: 0.5em;
+  padding-top: 1em;
+}
