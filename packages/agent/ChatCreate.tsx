@@ -5,24 +5,66 @@ export type ChatCreateProps = {
   onInputChange: (value: string) => void;
   onSend: () => void;
   onOptionSend: (value: string) => void;
+  sendLoading: boolean;
 };
 
 const CommentLengthMax = 300;
 
 export function ChatCreate(props: ChatCreateProps) {
-  const { input, onInputChange, onSend, onOptionSend } = props;
+  const { input, onInputChange, onSend, onOptionSend, sendLoading } = props;
+
+  const { account, sign, signIn } = useSign();
+  const { setConnectModalVisibleAll } = useUi();
+
+  const placeholder = useMemo(() => {
+    if (account == null) {
+      return 'Connect your wallet.';
+    }
+
+    if (sign == null) {
+      return 'Sign your wallet.';
+    }
+
+    return 'Message Camila';
+  }, [account, sign]);
+
+  const inputDisabled = useMemo(() => {
+    return sign == null;
+  }, [sign]);
+
+  const sendDisabled = useMemo(() => {
+    return inputDisabled || input === '' || sendLoading;
+  }, [inputDisabled, input, sendLoading]);
+
+  const options = useMemo(() => {
+    return [];
+  }, []);
 
   const handleSend = useCallback(() => {
-    // Send question.
-  }, []);
+    if (sendDisabled) {
+      return;
+    }
+
+    onSend();
+
+    onInputChange('');
+  }, [sendDisabled, onSend, onInputChange]);
 
   const handleKeyUp = useCallback((event: React.KeyboardEvent) => {
-    // Send question by Enter Key.
-  }, []);
+    if (event.key === 'Enter') {
+      handleSend();
+    }
+  }, [handleSend]);
 
   const handleClick = useCallback(() => {
-    // User verify.
-  }, []);
+    if (account == null) {
+      setConnectModalVisibleAll();
+    }
+
+    if (sign == null) {
+      signIn().catch(() => {});
+    }
+  }, [sign, signIn, account, setConnectModalVisibleAll]);
 
   return (
     <div>
@@ -41,10 +83,26 @@ export function ChatCreate(props: ChatCreateProps) {
           disabled={sendDisabled}
           className={styles.button}
         >
+          {
+            sendLoading
+              ? <LoadingSpin loading size={19} />
+              : <ArrowUpward className={styles.arrow} />
+          }
         </Button>
       </div>
       <div className={styles.options}>
-        {/* Preset questions. */}
+        {
+          options.map((item, index) => (
+            <Button
+              key={index}
+              disabled={sendLoading}
+              onClick={() => onOptionSend(item)}
+              className={styles.option}
+            >
+              { item }
+            </Button>
+          ))
+        }
       </div>
     </div>
   );

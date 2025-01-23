@@ -22,10 +22,35 @@
   padding: 0.4em;
 }
 
+.arrow {
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+}
+
 .options {
   display: grid;
   grid-template-columns: repeat(4, auto);
   align-items: center;
   gap: 0.5em;
   padding-top: 1em;
+}
+
+.option {
+  font-size: 0.9em;
+  background: rgba(255 255 255 / 0.1);
+  border: 1px solid rgba(255 255 255 / 0.2);
+  border-radius: 100em;
+  color: rgba(255 255 255 / 0.5);
+  padding: 0.5em 0;
+
+  &:hover {
+    color: white;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .options {
+    grid-template-columns: 1fr;
+  }
 }
