@@ -1,15 +1,55 @@
 import styles from './Page.module.scss';
 
 export function Component() {
+  const { account } = useSolanaBlockchain();
+
+  const { botChats, botChatSend, botChatsLoading } = useBotChats();
+  const { user } = useUser(account);
+
   const [input, setInput] = useState('');
 
-  const handleSend = useCallback(async () => {
-    // Send question.
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Scroll to chats bottom.
+  useEffect(() => {
+    const container = ref.current;
+
+    if (container == null) {
+      return undefined;
+    }
+
+    const observer = new MutationObserver(() => {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: 'smooth',
+      });
+    });
+
+    observer.observe(container, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
+  const handleSend = useCallback(async () => {
+    await botChatSend({
+      content: input,
+      username: user?.name ?? '',
+      conversation: botChats,
+    });
+  }, [botChatSend, input, user, botChats]);
+
   const handleOptionSend = useCallback(async (value: string) => {
-    // Send preset question.
-  }, []);
+    await botChatSend({
+      content: value,
+      username: user?.name ?? '',
+      conversation: botChats,
+    });
+  }, [botChatSend, user, botChats]);
 
   return (
     <div className={styles.page}>
@@ -19,7 +59,27 @@ export function Component() {
         </div>
         <div ref={ref} className={styles.content}>
           {
-            /* Display chat content. */
+            botChats.map((chat, index) => (
+              <div key={index}>
+                {
+                  chat.content !== '' && (
+                    <div className={styles.question}>
+                      <div className={styles.text}>{ chat.content }</div>
+                    </div>
+                  )
+                }
+                {
+                  chat.response !== '' && (
+                    <div className={styles.response}>
+                      <img src="" alt="" className={styles.image} />
+                      <div className={styles.name}>Agent</div>
+                      <div />
+                      <div>{ chat.response }</div>
+                    </div>
+                  )
+                }
+              </div>
+            ))
           }
         </div>
         <ChatCreate
@@ -27,6 +87,7 @@ export function Component() {
           onInputChange={setInput}
           onSend={handleSend}
           onOptionSend={handleOptionSend}
+          sendLoading={botChatsLoading}
         />
       </div>
     </div>

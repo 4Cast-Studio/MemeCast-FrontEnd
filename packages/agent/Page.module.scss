@@ -29,3 +29,40 @@
   height: 250px;
   overflow: auto;
 }
+
+.question {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-bottom: 0.5em;
+}
+
+.text {
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 100em;
+  padding: 0.5em 1em;
+}
+
+.response {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  gap: 0 1em;
+  margin-bottom: 0.5em;
+}
+
+.image {
+  width: 2.5em;
+  height: 2.5em;
+  display: block;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 1.4em;
+  width: fit-content;
+  background: linear-gradient(to right, #D10E00 0%, #FF6F65 100%);
+  background-clip: text;
+  color: transparent;
+}
