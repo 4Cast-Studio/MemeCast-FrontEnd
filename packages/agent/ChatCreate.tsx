@@ -37,7 +37,12 @@ export function ChatCreate(props: ChatCreateProps) {
   }, [inputDisabled, input, sendLoading]);
 
   const options = useMemo(() => {
-    return [];
+    return [
+      'Who is Camila ?🤖',
+      'What can i do with Camila ?🎮',
+      'Say, Hi ?🌞',
+      'Why You Use Deepseek V3?🐳',
+    ];
   }, []);
 
   const handleSend = useCallback(() => {

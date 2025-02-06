@@ -1,3 +1,5 @@
+import ImageCamila from './Camila.webp';
+
 import styles from './Page.module.scss';
 
 export function Component() {
@@ -71,7 +73,7 @@ export function Component() {
                 {
                   chat.response !== '' && (
                     <div className={styles.response}>
-                      <img src="" alt="" className={styles.image} />
+                      <img src={ImageCamila} alt="Camila" className={styles.image} />
                       <div className={styles.name}>Agent</div>
                       <div />
                       <div>{ chat.response }</div>
@@ -89,6 +91,9 @@ export function Component() {
           onOptionSend={handleOptionSend}
           sendLoading={botChatsLoading}
         />
+        <div className={styles.bottom}>
+          <a className={styles.link}>PLAY WITH CAMILA NOW!</a>
+        </div>
       </div>
     </div>
   );

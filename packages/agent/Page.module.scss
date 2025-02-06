@@ -1,4 +1,5 @@
 .page {
+  background: url("./PageBackground.webp") center / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,4 +66,25 @@
   background: linear-gradient(to right, #D10E00 0%, #FF6F65 100%);
   background-clip: text;
   color: transparent;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5em;
+}
+
+.link {
+  font-size: 1.2em;
+  font-weight: 600;
+  background: linear-gradient(260deg, #AF322E -5%, #431115 110%);
+  border-radius: 100em;
+  padding: 0.5em 1.5em;
+}
+
+@media screen and (width <= 900px) {
+  .page {
+    font-size: 0.85em;
+    background: url("./PageBackground.webp") right / cover no-repeat;
+  }
 }
